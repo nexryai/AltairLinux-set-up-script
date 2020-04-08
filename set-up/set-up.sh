@@ -15,10 +15,29 @@ cd Tela-1080p
 sudo ./install.sh
 cd ..
 rm -r Tela-1080p
-sudo apt install clamtk
-sudo apt-get install gdebi
-echo クリーンアップを実行します。
+sudo apt-get install vlc
 sudo apt-get autoremove
+cd /usr/share/altair-linux/app
+sudo unzip app-youtube-music.zip
+sudo unzip app-google-doc.zip
+cd
+echo ====
+echo easy anbox installer
+echo c 2020 AltairLinux team
+echo ====
+sudo echo started
+sudo add-apt-repository ppa:morphis/anbox-support
+sudo apt update
+sudo apt install anbox-modules-dkms
+sudo modprobe ashmem_linux
+sudo modprobe binder_linux
+sudo snap install --devmode --beta anbox
+snap refresh --beta --devmode anbox
+echo ====
+echo done!
+echo ====
 echo ====
 echo 全て完了しました。
 echo ===
+
+
